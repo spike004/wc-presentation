@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS </title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: grid;
+            gap: 40px;
+            padding: 5% 10%;
+        }
+        .card-layout-auto-col{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        h1{
+            margin:0;
+        }
+        .button-container{
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+           
+        }
+        /* base-button.card-btn{
+            --button-background: #fff;
+    --button-color: rgb(70, 71, 83);
+            --button-background-highlight: rgb(70, 71, 83);
+    --button-color-highlight: #FFFFFF;
+    --button-border-highlight: 1px solid #fff;
+    --icon-color: rgb(70, 71, 83);
+    --icon-highlight: #FFFFFF;
+        } */
+        /* base-button.secondary{
+            --button-color: #fff;
+            --button-background-color: rgb(70, 71, 83);
+            --button-background-highlight: #fff;
+    --button-color-highlight: rgb(70, 71, 83);
+    --button-border: 1px solid #fff;
+    --button-border-highlight: 1px solid rgb(70, 71, 83);
+    --icon-color: #fff;
+    --icon-highlight: rgb(70, 71, 83);
+        } */
+        base-button.tertiary{
+            --button-color: #fff;
+            --button-background-color: transparent;
+            --button-background-highlight: transparent;
+    --button-color-highlight: #fff;
+    --button-border: 1px solid transparent;
+    --button-border-highlight: 1px solid transparent;
+    --icon-color: #fff;
+    --icon-highlight: #fff;
+        }
+        boss-tooltip{
+            --icon-color: rgb(70, 71, 83);
+        }
+        @media(prefers-color-scheme: dark){
+            boss-tooltip{
+                --icon-color: #fff;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="card container grid-auto-col">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <h3>Lorem ipsum dolor sit amet<boss-tooltip data-icon="info-icon" data-text="some info"></boss-tooltip> consectetur adipisicing elit. Vero asperiores explicabo cumque incidunt, quas neque!</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="card-btn" data-text="click here" ></base-button>
+        
+            </div>
+        </div>
+    </div>
+    <div class="card-layout-auto-col">
+
+   
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn  secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="primary" data-text="click here"></base-button>
+        
+            </div>
+        </div>
+    </div>
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="card-btn" data-text="click here"></base-button>
+        
+            </div>
+        </div>
+    </div>
+    <!-- <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+        </div>
+    </div> -->
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn  secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button style="--icon-color:rgb(70, 71, 83); --icon-margin: 0 0 0 5px;" class="card-btn" data-text="click here" data-icon="play-alt-icon"></base-button>
+        
+            </div>
+        </div>
+    </div>
+</div>
+    <h1>Grid-Auto-Col</h1>
+    <div class="container grid-auto-col">
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+
+    </div>
+    <h1>Grid-Auto-Row</h1>
+    <div class="container grid-auto-row">
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+
+    </div>
+    <h1>Flex-Row</h1>
+    <div class="container flex-auto-row">
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+
+    </div>
+    <h1>Flex-Col</h1>
+    <div class="container flex-auto-col">
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+        <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
+
+    </div>
+</body>
+</html>

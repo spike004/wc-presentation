@@ -1,0 +1,34 @@
+.card{
+    box-sizing: border-box;
+    --text-color-base: rgb(70, 71, 83);
+    --bg-base: #fff;
+    color: var(--text-color-base);
+    background-color: var(--bg-base);
+    @media (prefers-color-scheme: dark) {
+        --text-color-base: #fff;
+        --bg-base: rgb(70, 71, 83);
+      }
+    .media-container{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .content{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    place-self: center;
+    color: var(--text-color);
+}
+&.grid-auto-row{
+    grid-template-rows: 1fr max-content;
+    .content{
+        place-self: flex-start;
+    }
+}
+}

@@ -1,0 +1,48 @@
+@mixin container($direction){
+
+    @if $direction == ltr{
+
+    }
+}
+
+@mixin placeItems($itempos){
+    @if $itempos == start {
+        --container-item-pos: flex-#{$itempos};
+        place-items: var(--container-item-pos);
+    }
+    @if $itempos == 'center' {
+        --container-item-pos: #{$itempos};
+        place-items: var(--container-item-pos);
+    }
+@if $itempos == 'end' {
+    --container-item-pos: flex-#{$itempos};
+    place-items: var(--container-item-pos);
+}
+
+}
+
+@mixin setContainer($containerTemplate, $flexdir: initial, $min: initial, $max: initial, $justifyC: initial, $gap: initial){
+    @if $containerTemplate == 'grid-auto-col'{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($min, $max));
+       
+    }
+    @if $containerTemplate == 'grid-auto-row'{
+        display: grid;
+        grid-auto-flow: row;
+        gap: $gap;
+    }
+    @if $containerTemplate == 'flex-auto-row'{
+        display: flex;
+        flex-direction: $flexdir;
+        flex-wrap: wrap;
+    }
+    @if $containerTemplate == 'flex-auto-col'{
+        display: flex;
+        flex-direction: $flexdir;
+        flex-wrap: wrap;
+    }
+    @if $justifyC != initial{
+        justify-content: $justifyC;
+    }
+}

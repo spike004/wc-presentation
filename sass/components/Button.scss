@@ -1,0 +1,51 @@
+@mixin setButton($type) {
+  @if $type == primary {
+    --button-background: #fff;
+    --button-color: rgb(70, 71, 83);
+    --button-background-highlight: rgb(70, 71, 83);
+    --button-color-highlight: #ffffff;
+    --button-border-highlight: 1px solid #fff;
+    --icon-color: rgb(70, 71, 83);
+    --icon-highlight: #ffffff;
+    --button-border: 1px solid rgb(70, 71, 83);
+  }
+  @if $type == secondary {
+    --button-color: #fff;
+    --button-background-color: rgb(70, 71, 83);
+    --button-background-highlight: #fff;
+    --button-color-highlight: rgb(70, 71, 83);
+    --button-border: 1px solid #fff;
+    --button-border-highlight: 1px solid rgb(70, 71, 83);
+    --icon-color: #fff;
+    --icon-highlight: rgb(70, 71, 83);
+  }
+  @if $type == tertiary {
+    --button-color: #fff;
+    --button-background-color: transparent;
+    --button-background-highlight: transparent;
+    --button-color-highlight: #fff;
+    --button-border: 1px solid transparent;
+    --button-border-highlight: 1px solid transparent;
+    --icon-color: #fff;
+    --icon-highlight: #fff;
+  }
+}
+
+base-button.primary {
+  @include setButton(primary);
+//   @media (prefers-color-scheme: dark) {
+//     @include setButton(secondary);
+//   }
+}
+base-button.card-btn {
+  @include setButton(primary);
+//   @media (prefers-color-scheme: dark) {
+//     @include setButton(secondary);
+//   }
+}
+base-button.secondary {
+  @include setButton(secondary);
+//   @media (prefers-color-scheme: dark) {
+//     @include setButton(secondary);
+//   }
+}

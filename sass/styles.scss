@@ -1,0 +1,8 @@
+@use '../sass/components/Button.scss';
+@use '../sass/components/Container.scss';
+@use '../sass/components/Card.scss';
+
+body{
+    background-color:cadetblue
+}
+$btnMin: 1fr;

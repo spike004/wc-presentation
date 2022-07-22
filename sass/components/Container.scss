@@ -1,0 +1,25 @@
+@use '../utils/mixins.scss' as *;
+
+.container{
+    $containerItemPos: start;
+    $containerTemplate: grid-auto-col;
+    &.grid-auto-col{
+        @include setContainer(grid-auto-col, unset, 181px, 1fr);
+        @include placeItems($containerItemPos);
+    }
+    &.grid-auto-row{
+        $containerItemPos: center;
+        $containerTemplate: grid-auto-row;
+        @include setContainer($containerTemplate, row, unset, unset, $gap: 15px);
+        @include placeItems($containerItemPos);
+    }  
+    &.flex-auto-row{
+        $containerTemplate: flex-auto-row;
+        @include setContainer($containerTemplate, initial, initial, initial, space-around);
+    }
+    &.flex-auto-col{
+        $containerTemplate: flex-auto-col;
+        @include setContainer($containerTemplate, column, initial, initial, space-around);
+    }
+    
+}
