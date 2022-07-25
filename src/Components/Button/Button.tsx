@@ -4,8 +4,7 @@ import { isIdentifier } from "typescript";
 
 // Don’t forget to implement host-context
 const buttonTemplate = document.createElement('template') as HTMLTemplateElement;
-buttonTemplate.innerHTML = `
-<style>
+buttonTemplate.innerHTML = `<style>
 :host{
     --button-width: auto;
     --button-height: 40px;
@@ -79,8 +78,8 @@ svg-icon:not([data-icon]){
     <button class='button'>
 
    
-    </button>
-`;
+    </button>`;
+
 
 
 class BaseButton extends HTMLElement {

@@ -288,7 +288,7 @@ iconTemplate.innerHTML = `
 `;
 
 
-class SvgIcons extends HTMLElement {
+class SvgComponent extends HTMLElement {
   static get observedAttributes() {
     return ["data-icon"];
   }
@@ -310,7 +310,7 @@ class SvgIcons extends HTMLElement {
 
 
 
-window.customElements.define("svg-icon", SvgIcons);
+window.customElements.define("svg-component", SvgComponent);
 
 
 

@@ -6,6 +6,7 @@
         "module": "es6",
         "moduleResolution": "node",
         "experimentalDecorators": true, 
+        "jsx": "preserve",
         "target": "es6",
         "allowJs": true,
         "lib":[

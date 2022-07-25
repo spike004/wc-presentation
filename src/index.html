@@ -51,24 +51,39 @@
             --button-color: #fff;
             --button-background-color: transparent;
             --button-background-highlight: transparent;
-    --button-color-highlight: #fff;
-    --button-border: 1px solid transparent;
-    --button-border-highlight: 1px solid transparent;
-    --icon-color: #fff;
-    --icon-highlight: #fff;
+            --button-color-highlight: #fff;
+            --button-border: 1px solid transparent;
+            --button-border-highlight: 1px solid transparent;
+            --icon-color: #fff;
+            --icon-highlight: #fff;
         }
         boss-tooltip{
             --icon-color: rgb(70, 71, 83);
         }
         @media(prefers-color-scheme: dark){
             boss-tooltip{
-                --icon-color: #fff;
+            --icon-color: #fff;
             }
 
         }
     </style>
 </head>
 <body>
+    <svg-component></svg-component>
+    <boss-modal trigger-id="launch">
+        <div class="card container grid-auto-row" slot="container">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn  secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="primary" data-text="click here"></base-button>
+        
+            </div>
+        </div></boss-modal>
     <div class="card container grid-auto-col">
         <div class="media-container">
             <img src="https://source.unsplash.com/random/300x300"/>
@@ -77,7 +92,7 @@
             <h1>Lorem ipsum dolor sit amet.</h1>
             <h3>Lorem ipsum dolor sit amet<boss-tooltip data-icon="info-icon" data-text="some info"></boss-tooltip> consectetur adipisicing elit. Vero asperiores explicabo cumque incidunt, quas neque!</h3>
             <div class="container grid-auto-col button-container" >
-                <base-button class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button id="launch" class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
                 <base-button class="card-btn" data-text="click here" ></base-button>
         
             </div>
