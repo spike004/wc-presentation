@@ -74,7 +74,7 @@ export const CustomElement = (config: CustomElementConfig) => (cls: CustomElemen
 };
 
 
-function Autobind(
+export function Autobind(
     _: any, 
     _2: string, 
     descriptor: PropertyDescriptor

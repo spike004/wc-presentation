@@ -2,7 +2,7 @@
   @if $type == primary {
     --button-background: #fff;
     --button-color: rgb(70, 71, 83);
-    --button-background-highlight: rgb(70, 71, 83);
+    --button-background-highlight: #5f9ea0;
     --button-color-highlight: #ffffff;
     --button-border-highlight: 1px solid #fff;
     --icon-color: rgb(70, 71, 83);
@@ -12,12 +12,12 @@
   @if $type == secondary {
     --button-color: #fff;
     --button-background-color: rgb(70, 71, 83);
-    --button-background-highlight: #fff;
-    --button-color-highlight: rgb(70, 71, 83);
+    --button-background-highlight:#5f9ea0;
+    --button-color-highlight: #FFF;
     --button-border: 1px solid #fff;
-    --button-border-highlight: 1px solid rgb(70, 71, 83);
+    --button-border-highlight: 1px solid #5f9ea0;
     --icon-color: #fff;
-    --icon-highlight: rgb(70, 71, 83);
+    --icon-highlight: #FFF;
   }
   @if $type == tertiary {
     --button-color: #fff;
@@ -29,6 +29,7 @@
     --icon-color: #fff;
     --icon-highlight: #fff;
   }
+  font-family: var(--primary-font);
 }
 
 base-button.primary {

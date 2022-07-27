@@ -56,21 +56,21 @@ button:focus social-icon::part(icon),button:focus{
   background: var(--button-background-highlight);
   border: var(--button-border-highlight, 1px solid transparent);
 }
-svg-icon{
+svg-component{
     --path-stroke: var(--icon-color);
     --path-stroke: var(--icon-color);
     --svg-height: 16px;
     --svg-width: 16px;
     --svg-margin: var(--icon-margin, 0 0 0 5px);
 }
-button:hover svg-icon{
+button:hover svg-component{
   --path-fill: var(--icon-highlight);
   --path-stroke: var(--icon-highlight);
 }
-button:hover svg-icon:not([data-icon=“fb-icon”]), button:hover svg-icon:not([data-icon=“linkedin-icon”]){
+button:hover svg-component:not([data-icon=“fb-icon”]), button:hover svg-component:not([data-icon=“linkedin-icon”]){
   --path-stroke: var(--icon-highlight);
 }
-svg-icon:not([data-icon]){
+svg-component:not([data-icon]){
   display: none;
 }
 
@@ -92,7 +92,7 @@ class BaseButton extends HTMLElement {
     const thisShadowRoot = this.shadowRoot as ShadowRoot;
     thisShadowRoot.appendChild(buttonTemplate.content.cloneNode(true));
     const btn = thisShadowRoot.querySelector('.button') as HTMLElement;
-    const icon = document.createElement('svg-icon') as HTMLElement;
+    const icon = document.createElement('svg-component') as HTMLElement;
     this.dataset.icon ? icon.setAttribute('data-icon', this.dataset.icon): '';
     const buttonHeight = this.dataset.height as string;
     btn.innerText = this.dataset.text as string;
@@ -120,7 +120,7 @@ class BaseButton extends HTMLElement {
   // }
   updateIcon(name: string, oldValue: string, newValue:string){
 
-      const elIcon = this ? this.shadowRoot?.querySelector('svg-icon') as HTMLElement : null;
+      const elIcon = this ? this.shadowRoot?.querySelector('svg-component') as HTMLElement : null;
 
       if(name == 'data-icon' && newValue != oldValue){
           elIcon?.setAttribute('data-icon', `${this.getAttribute('data-icon')}`)

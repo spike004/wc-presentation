@@ -24,7 +24,7 @@ interface TooltipProps {
       background-color: rgba(0,0,0,0.7);
       color: #fff;
   }
-  svg-icon{
+  svg-component{
       --path-stroke: var(--icon-color);
       --svg-height: 18px;
       --svg-width: 18px;
@@ -39,7 +39,7 @@ class Tooltip extends HTMLElement {
         super() 
         this.props = {
             tooltipContainer: document.createElement('div'),
-            tooltipIcon: document.createElement('svg-icon'),
+            tooltipIcon: document.createElement('svg-component'),
             tooltipText: this.dataset.text as string
         }     
         this.props.tooltipContainer.className = "tooltip-container";

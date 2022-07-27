@@ -1,6 +1,4 @@
-// import icons from 'src/components/web-components/icons';
-// console.log(icons)
-const iconTemplate = document.createElement("template") as HTMLTemplateElement;
+export const iconTemplate = document.createElement("template") as HTMLTemplateElement;
 
 iconTemplate.innerHTML = `
 <style>
@@ -288,24 +286,27 @@ iconTemplate.innerHTML = `
 `;
 
 
-class SvgComponent extends HTMLElement {
+export class SvgComponent extends HTMLElement {
+  
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open", delegatesFocus: true });
+    this.shadowRoot!.appendChild(iconTemplate.content.cloneNode(true));
+  }
+
   static get observedAttributes() {
     return ["data-icon"];
   }
-  constructor() {
-    super();
-    
-    this.attachShadow({ mode: "open" });
-    
-    this.shadowRoot!.appendChild(iconTemplate.content.cloneNode(true));
-    this.shadowRoot!.querySelector("use")!.href.baseVal = `#${this.dataset.icon}`;
-
-  }
-
+ 
   attributeChangedCallback(name: string, oldValue: string, newValue:string) {
-    updateStyle(this);
+    this.updateStyle(this);
   }
-  
+
+  updateStyle(elem: any) {
+    const shadow = elem.shadowRoot;
+    shadow.querySelector("use").href.baseVal = `#${elem.dataset.icon}`;
+  }
+
 }
 
 
@@ -314,7 +315,3 @@ window.customElements.define("svg-component", SvgComponent);
 
 
 
-function updateStyle(elem: any) {
-  const shadow = elem.shadowRoot;
-  shadow.querySelector("use").href.baseVal = `#${elem.dataset.icon}`;
-}

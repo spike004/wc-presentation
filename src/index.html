@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TS </title>
     <style>
+        *{
+            --primary-font: helvetica;
+            font-family: var(--primary-font);
+        }
         html,body{
             margin: 0;
             padding: 0;
+            scroll-behavior:smooth;
         }
-        body{
+       main{
             display: grid;
             gap: 40px;
             padding: 5% 10%;
+            
         }
         .card-layout-auto-col{
             display: grid;
@@ -66,14 +72,49 @@
             }
 
         }
+/* width */
+::-webkit-scrollbar {
+     width: 12px;
+   
+   }
+   
+   /* Track */
+   ::-webkit-scrollbar-track {
+     background: #f4f4f4;
+     border-radius: 20px;
+    
+   }
+   
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+     background: #555;
+     border-radius: 20px;
+     border: 2px solid #f4f4f4;
+   }
+   
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+    background: #5f9ea0;
+   }
+   keep-scrolling{
+    position: fixed;
+    top: 90%;
+    right: 2%;
+       --button-background-color: #fff;
+       --path-stroke: #000;
+   }
     </style>
 </head>
 <body>
+    <keep-scrolling class="pulse" data-icon="arrow-down-icon"></keep-scrolling>
+    <main>
+
+  
     <svg-component></svg-component>
-    <boss-modal trigger-id="launch">
+    <boss-modal trigger-id="rocket">
         <div class="card container grid-auto-row" slot="container">
         <div class="media-container">
-            <img src="https://source.unsplash.com/random/300x300"/>
+            <img src="https://source.unsplash.com/random/300x350"/>
         </div>
         <div class="content">
             <h1>Lorem ipsum dolor sit.</h1>
@@ -83,7 +124,9 @@
                 <base-button class="primary" data-text="click here"></base-button>
         
             </div>
-        </div></boss-modal>
+        </div>
+        </div>
+    </boss-modal>
     <div class="card container grid-auto-col">
         <div class="media-container">
             <img src="https://source.unsplash.com/random/300x300"/>
@@ -92,8 +135,8 @@
             <h1>Lorem ipsum dolor sit amet.</h1>
             <h3>Lorem ipsum dolor sit amet<boss-tooltip data-icon="info-icon" data-text="some info"></boss-tooltip> consectetur adipisicing elit. Vero asperiores explicabo cumque incidunt, quas neque!</h3>
             <div class="container grid-auto-col button-container" >
-                <base-button id="launch" class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
-                <base-button class="card-btn" data-text="click here" ></base-button>
+                <base-button id="rocket" class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <!-- <base-button class="card-btn" data-text="click here" ></base-button> -->
         
             </div>
         </div>
@@ -103,7 +146,7 @@
    
     <div class="card container grid-auto-row">
         <div class="media-container">
-            <img src="https://source.unsplash.com/random/300x300"/>
+            <img src="https://source.unsplash.com/random/350x300"/>
         </div>
         <div class="content">
             <h1>Lorem ipsum dolor sit.</h1>
@@ -117,7 +160,53 @@
     </div>
     <div class="card container grid-auto-row">
         <div class="media-container">
-            <img src="https://source.unsplash.com/random/300x300"/>
+            <img src="https://source.unsplash.com/random/200x200"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="card-btn" data-text="click here"></base-button>
+        
+            </div>
+        </div>
+    </div>
+
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x250"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn  secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button style="--icon-color:rgb(70, 71, 83); --icon-margin: 0 0 0 5px;" class="card-btn" data-text="click here" data-icon="play-alt-icon"></base-button>
+        
+            </div>
+        </div>
+    </div>
+
+
+   
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/250x300"/>
+        </div>
+        <div class="content">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia.</h3>
+            <div class="container grid-auto-col button-container" >
+                <base-button class="card-btn  secondary" data-text="click here" data-icon="arrow-right-icon"></base-button>
+                <base-button class="primary" data-text="click here"></base-button>
+        
+            </div>
+        </div>
+    </div>
+    <div class="card container grid-auto-row">
+        <div class="media-container">
+            <img src="https://source.unsplash.com/random/300x200"/>
         </div>
         <div class="content">
             <h1>Lorem ipsum dolor sit.</h1>
@@ -140,7 +229,7 @@
     </div> -->
     <div class="card container grid-auto-row">
         <div class="media-container">
-            <img src="https://source.unsplash.com/random/300x300"/>
+            <img src="https://source.unsplash.com/random/200x300"/>
         </div>
         <div class="content">
             <h1>Lorem ipsum dolor sit.</h1>
@@ -153,7 +242,7 @@
         </div>
     </div>
 </div>
-    <h1>Grid-Auto-Col</h1>
+    <!-- <h1>Grid-Auto-Col</h1>
     <div class="container grid-auto-col">
         <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
         <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
@@ -180,6 +269,7 @@
         <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
         <base-button data-text="click here" data-icon="arrow-right-icon"></base-button>
 
-    </div>
+    </div> -->
+</main>
 </body>
 </html>

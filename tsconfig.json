@@ -1,12 +1,11 @@
 {
     "compilerOptions":{
-        "outDir": "./dist/",
+        "outDir": "../dist/",
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "es6",
         "moduleResolution": "node",
         "experimentalDecorators": true, 
-        "jsx": "preserve",
         "target": "es6",
         "allowJs": true,
         "lib":[
